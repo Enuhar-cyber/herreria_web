@@ -139,8 +139,17 @@ header {
     background-color: #fff;
 }
 .portafolio{
+    background-color:#fff;
     padding: 2rem;
     text-align: center;
+}
+.portafolio_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.portafolio_img img{
+    margin: 1rem;
 }
 
 /* Footer */
