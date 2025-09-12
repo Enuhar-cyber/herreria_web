@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Contacto - Herreria</title>
+    <title>Contacto - Herrería Lopez</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 <body>
+    <!-- Encabezado -->
     <header>
         <div class="logo">
             <img src="images/Logo.png" alt="Logo" style="height: 40px; width: auto; margin-right: 10px; vertical-align: middle; float: left;">
@@ -14,22 +17,67 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="servicios.html"><i class="fas fa-hammer"></i> Servicios</a></li>
+                <li><a href="productos.html"><i class="fas fa-images"></i> Productos</a></li>
+                <li><a href="nosotros.html"><i class="fas fa-people-arrows"></i> Nosotros</a></li>
+                <li><a href="contacto.html" class="active"><i class="fas fa-envelope"></i> Contacto</a></li>
             </ul>
         </nav>
         <div class="menu-toggle">
             <i class="fas fa-bars"></i>
         </div>
     </header>
-    <div class="contacto">
-        <h2>Contacto</h2>
-        <p>Si deseas más información sobre nuestros servicios, productos, no dudes en ponerte en contacto con nosotros.</p>
-        <p>Teléfono: 123-456-7890</p>
-        <p>Email: info@herreria.com</p>
-        <p>Dirección: Calle Falsa 123, Ciudad</p>
-    </div>
+
+    <!-- principal -->
+    <section class="contacto">
+        <h2><i class="fas fa-envelope-open-text"></i> Contáctanos</h2>
+        <p>¿Tienes un proyecto en mente o necesitas más información? Llena el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+
+        <div class="contacto-container">
+            <!-- Formulario -->
+            <div class="formulario">
+                <form action="#" method="post">
+                    <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+
+                    <label for="email"><i class="fas fa-envelope"></i> Correo</label>
+                    <input type="email" id="email" name="email" placeholder="email@ejemplo.com" required>
+
+                    <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+
+                    <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+                    <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar</button>
+                </form>
+            </div>
+
+            <!-- contacto -->
+            <div class="info-contacto">
+                <h3><i class="fas fa-map-marker-alt"></i> Nuestra ubicación</h3>
+                <p><strong>Dirección:</strong> Jocotepec centro, JAL</p>
+                <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
+                <p><strong>Email:</strong> contacto@herreríalopez.com</p>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.1139845310873!2d-99.13319492379661!3d19.406899341701437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sZocalo%2C%20Centro%20Historico%2C%20Centro%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1709852122346!5m2!1ses-419!2smx" 
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Herrería Lopez - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- responsive -->
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
