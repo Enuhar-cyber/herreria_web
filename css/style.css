@@ -151,7 +151,33 @@ header {
 .portafolio_img img{
     margin: 1rem;
 }
-
+.benefits-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.benefit-item{
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.company-description{
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
 /* Footer */
 footer {
     background-color: #1a1a1a;
