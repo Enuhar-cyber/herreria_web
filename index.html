@@ -9,6 +9,7 @@
     <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="logo">
             <img src="images/Logo.png" alt="Logo" style="height: 40px; width: auto; margin-right: 10px; vertical-align: middle; float: left;">
@@ -28,6 +29,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h2>Arte en Metal</h2>
@@ -35,37 +37,116 @@
             <a href="#contacto" class="btn">Solicitar Presupuesto</a>
         </div>
     </section>
-    <section>
-    <div class="mapa-ubicacion">
-        <h1>¿Por qué elegirnos?</h1>
-        <p style="padding-bottom: 40px;">
-            <h3>
-            En herreria Lopez, entendemos que un trabajo de herrería es más que una simple estructura metálica; es una inversión en la seguridad, la funcionalidad y la belleza de su hogar o negocio. Por eso, combinamos técnicas tradicionales con materiales de primera para entregar piezas que superan sus expectativas.
-            </h3>
-        </p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.1139845310873!2d-99.13319492379661!3d19.406899341701437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sZocalo%2C%20Centro%20Historico%2C%20Centro%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1709852122346!5m2!1ses-419!2smx" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    </section>
-    <div class="portafolio">
+
+    <!-- Portfolio Section -->
+    <section class="portafolio">
         <h1>PORTAFOLIO</h1>
-        <span class="portafolio_img">
-            <img src="https://picsum.photos/200/300" alt="Portafolio 1">
-            <img src="https://picsum.photos/200/300" alt="Portafolio 2">
-            <img src="https://picsum.photos/200/300" alt="Portafolio 3">
+        <div class="portafolio_img">
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/200/300" alt="Portafolio 1">
+                <h3>Puerta de Hierro Forjado</h3>
+                <p>Elegante puerta de entrada con diseños clásicos y acabados de primera calidad.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/200/300" alt="Portafolio 2">
+                <h3>Barandal Moderno</h3>
+                <p>Barandal minimalista con líneas limpias, perfecto para escaleras contemporáneas.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/200/300" alt="Portafolio 3">
+                <h3>Ventana Decorativa</h3>
+                <p>Ventana con protección y elementos decorativos que combinan seguridad y estética.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/200/300" alt="Portafolio 4">
+                <h3>Portón Industrial</h3>
+                <p>Portón robusto y funcional diseñado para uso comercial e industrial.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/200/300" alt="Portafolio 5">
+                <h3>Pérgola Metálica</h3>
+                <p>Estructura decorativa para jardín con diseño personalizado y tratamiento anticorrosivo.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/200/300" alt="Portafolio 6">
+                <h3>Muebles de Herrería</h3>
+                <p>Mobiliario único que combina metal y otros materiales para crear piezas exclusivas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <h2 class="text-center">¿Por qué elegirnos?</h2>
+        
+        <div class="benefits-container">
+            <div class="benefit-item">
+                <i class="fas fa-medal"></i>
+                <h3>Experiencia y<br>Calidad</h3>
+                <p>Más de 20 años<br>creando obras<br>maestras en metal</p>
+            </div>
             
-        </span>
-        <span class="portafolio_img">
-            <img src="https://picsum.photos/200/300" alt="Portafolio 4">
-            <img src="https://picsum.photos/200/300" alt="Portafolio 5">
-            <img src="https://picsum.photos/200/300" alt="Portafolio 6">
-        </span>
+            <div class="benefit-item">
+                <i class="fas fa-tools"></i>
+                <h3>Tecnología<br>Avanzada</h3>
+                <p>Equipamiento<br>moderno para<br>resultados precisos</p>
+            </div>
+            
+            <div class="benefit-item">
+                <i class="fas fa-star"></i>
+                <h3>Diseños<br>Únicos</h3>
+                <p>Cada proyecto es<br>personalizado<br>a su gusto</p>
+            </div>
+        </div>
+
+        <!-- Company Description -->
+        <div class="company-description">
+            <h2>Nuestra Promesa</h2>
+            <p class="description-text">
+                En Herrería Lopez, entendemos que un trabajo de herrería es más que una simple estructura metálica; 
+                es una inversión en la seguridad, la funcionalidad y la belleza de su hogar o negocio. 
+                Por eso, combinamos técnicas tradicionales con materiales de primera para entregar piezas 
+                que superan sus expectativas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <div class="mapa-ubicacion">
+        <h2>Encuéntranos</h2>
+        <div style="display: flex; justify-content: center;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.1139845310873!2d-99.13319492379661!3d19.406899341701437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sZocalo%2C%20Centro%20Historico%2C%20Centro%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1709852122346!5m2!1ses-419!2smx" 
+                width="90%" 
+                height="450" 
+                style="border:0; border-radius: 20px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </div>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Herreria Lopez - Todos los derechos reservados</p>
+        <div class="footer-content">
+            <div class="footer-social">
+                <h3>Síguenos en redes sociales</h3>
+                <div class="social-icons">
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Herreria Lopez - Todos los derechos reservados</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
-        // Script para el menú responsive
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.menu').classList.toggle('active');
         });
