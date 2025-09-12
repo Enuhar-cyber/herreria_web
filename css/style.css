@@ -138,6 +138,10 @@ header {
     text-align: center;
     background-color: #fff;
 }
+.portafolio{
+    padding: 2rem;
+    text-align: center;
+}
 
 /* Footer */
 footer {
