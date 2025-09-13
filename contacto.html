@@ -31,9 +31,8 @@
 
     <!-- principal -->
     <section class="contacto">
-        <h2><i class="fas fa-envelope-open-text"></i> Contáctanos</h2>
+        <h2><i class="fas fa-envelope-open-text"></i> Solicita tu Cotización personalizada</h2>
         <p>¿Tienes un proyecto en mente o necesitas más información? Llena el formulario y nos pondremos en contacto contigo lo antes posible.</p>
-
         <div class="contacto-container">
             <!-- Formulario -->
             <div class="formulario">
@@ -45,10 +44,25 @@
                     <input type="email" id="email" name="email" placeholder="email@ejemplo.com" required>
 
                     <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono (Opcional)">
+                    <label for="tipo-proyecto"><i class="fas fa-hammer"></i> Tipo de Proyecto</label>
+
+                    <select id="tipo-proyecto" name="tipo-proyecto" required>
+                        <option value="" disabled selected>-- Elige una opción --</option>
+                        <option value="Porton">Portón</option>
+                        <option value="Barandal">Barandal</option>
+                        <option value="Proteccion">Protección para Ventana</option>
+                        <option value="Escalera">Escalera</option>
+                        <option value="Estructura">Estructura Metálica</option>
+                        <option value="Mueble">Mueble</option>
+                        <option value="Otro">Otro</option>
+                    </select>
 
                     <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe tu idea aquí..." required></textarea>
+
+                    <label for="archivo"><i class="fas fa-camera"></i> Adjunta una imagen (opcional)</label>
+                    <input class="archivo-input" type="file" id="archivo" name="archivo" accept="image/png, image/jpeg"></input>
 
                     <button type="submit" class="btn"><i class="fas fa-paper-plane" id="enviar-btn"></i> Enviar</button>
                 </form>
