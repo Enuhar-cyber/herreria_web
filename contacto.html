@@ -61,8 +61,12 @@
                     <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje</label>
                     <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe tu idea aquí..." required></textarea>
 
-                    <label for="archivo"><i class="fas fa-camera"></i> Adjunta una imagen (opcional)</label>
-                    <input class="archivo-input" type="file" id="archivo" name="archivo" accept="image/png, image/jpeg"></input>
+                    <label for="archivo" class="label-archivo">
+                        <i class="fas fa-camera"></i>
+                        <span>Seleccionar Archivo...</span>
+                            </label>
+                            <input type="file" id="archivo" name="archivo" class="input-archivo" accept="image/png, image/jpeg">
+                        <span id="nombre-archivo">Ningún archivo seleccionado</span>
 
                     <button type="submit" class="btn"><i class="fas fa-paper-plane" id="enviar-btn"></i> Enviar</button>
                 </form>
@@ -102,12 +106,18 @@
             </div>
         </div>
     </footer>
-
-    <!-- responsive -->
+    
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.menu').classList.toggle('active');
-        });
-    </script>
+    // Script para el menú responsive
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.menu').classList.toggle('active');
+    });
+
+    // NUEVO SCRIPT para el nombre del archivo
+    document.getElementById('archivo').addEventListener('change', function() {
+        var nombreArchivo = this.files[0] ? this.files[0].name : "Ningún archivo seleccionado";
+        document.getElementById('nombre-archivo').textContent = nombreArchivo;
+    });
+</script>
 </body>
 </html>

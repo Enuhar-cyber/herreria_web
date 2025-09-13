@@ -407,37 +407,45 @@ footer {
     color: #333;
     border-radius: 15px;
 }
-.archivo-input {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f4f4f4;
-    color: #1a1a1a;
-    border: 2px solid #e0a500;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 6px;
-}
+/* --- Estilos para el botón de subir archivo --- */
 
-.archivo-input:hover {
-    background-color: #e0a500;
-    color: #1a1a1a;
-    border-color: #e0a500;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.archivo-input::-webkit-file-upload-button {
+/* Ocultamos el input de archivo real, que es el feo */
+.input-archivo {
     display: none;
 }
 
+/* Le damos estilo a nuestra etiqueta (label) para que parezca un botón */
+.label-archivo {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #555; /* Un color neutro, puedes cambiarlo */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Hacemos que el ícono y el texto dentro del label se separen un poco */
+.label-archivo i {
+    margin-right: 8px;
+}
+
+.label-archivo:hover {
+    background-color: #333;
+}
+
+/* Estilos para el texto que muestra el nombre del archivo seleccionado */
+#nombre-archivo {
+    margin-left: 15px;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+}
 @media screen and (max-width: 768px) {
-    .archivo-input {
+    .label-archivo {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
