@@ -436,6 +436,21 @@ footer {
     display: none;
 }
 
+@media screen and (max-width: 768px) {
+    .archivo-input {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .archivo-input {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        margin-top: 4px;
+    }
+}
+
 /* Removed duplicate button styling as requested */
 .formulario form button {
     margin-top: 18px;
