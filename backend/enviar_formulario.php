@@ -1,36 +1,54 @@
 <?php
-$db_host = "localhost"; // Generalmente 'localhost' en Hostinger
-$db_nombre = "nombre_de_tu_base_de_datos"; // ESTO LO CREAS EN HOSTINGER (ej: u123456789_herreria)
-$db_usuario = "usuario_de_tu_base_de_datos"; // ESTO LO CREAS EN HOSTINGER (ej: u123456789_admin)
-$db_contra = "contraseña_de_tu_base_de_datos"; // ESTO LO CREAS EN HOSTINGER (¡MUY IMPORTANTE GUARDARLA!)
-$conexion = mysqli_connect($db_host, $db_usuario, $db_contra, $db_nombre);
-
-if (!$conexion) {
-    header("Location: contacto.html?status=error_db_connect");
+// ====================================================================
+// CONFIGURACIÓN DE BASE DE DATOS (guárdalo en archivo separado, ej. config.php)
+// ====================================================================
+$db_host = "localhost";
+$db_nombre = "nombre_de_tu_base_de_datos";
+$db_usuario = "usuario_de_tu_base_de_datos";
+$db_contra = "contraseña_de_tu_base_de_datos";
+// Conexión segura
+$conexion = new mysqli($db_host, $db_usuario, $db_contra, $db_nombre);
+if ($conexion->connect_error) {
+    header("Location: ../contacto.html?status=error_db_connect");
     exit();
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = mysqli_real_escape_string($conexion, $_POST['nombre'] ?? ''); 
-    $email = mysqli_real_escape_string($conexion, $_POST['email'] ?? '');
-    $telefono = mysqli_real_escape_string($conexion, $_POST['telefono'] ?? '');
-    $tipo_proyecto = mysqli_real_escape_string($conexion, $_POST['tipo_proyecto'] ?? ''); 
-    $mensaje = mysqli_real_escape_string($conexion, $_POST['mensaje'] ?? '');
+// ====================================================================
+// PROCESAR FORMULARIO
+// ====================================================================
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nombre        = trim($_POST['nombre'] ?? '');
+    $email         = trim($_POST['email'] ?? '');
+    $telefono      = trim($_POST['telefono'] ?? '');
+    $tipo_proyecto = trim($_POST['tipo_proyecto'] ?? '');
+    $mensaje       = trim($_POST['mensaje'] ?? '');
 
+    if (empty($nombre) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header("Location: contacto.html?status=invalid_input");
+        exit();
+    }
     $sql = "INSERT INTO mensajes (nombre, email, telefono, tipo_proyecto, mensaje) 
-            VALUES ('$nombre', '$email', '$telefono', '$tipo_proyecto', '$mensaje')";
+            VALUES (?, ?, ?, ?, ?)";
 
-    if (mysqli_query($conexion, $sql)) {
+    $stmt = $conexion->prepare($sql);
+    if ($stmt === false) {
+        header("Location: contacto.html?status=error_prepare");
+        exit();
+    }
+
+    $stmt->bind_param("sssss", $nombre, $email, $telefono, $tipo_proyecto, $mensaje);
+
+    if ($stmt->execute()) {
         header("Location: contacto.html?status=success");
     } else {
-        header("Location: contacto.html?status=error_query&msg=" . urlencode(mysqli_error($conexion)));
+        header("Location: ../contacto.html?status=error_query");
     }
-    
+
+    $stmt->close();
 } else {
     header("Location: contacto.html");
 }
-
 // ====================================================================
 // CERRAR CONEXIÓN
 // ====================================================================
-mysqli_close($conexion);
+$conexion->close();
 ?>
