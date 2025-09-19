@@ -37,7 +37,7 @@
         <div class="contacto-container">
             <!-- Formulario -->
             <div class="formulario">
-                <form action="#" method="post">
+                <form action="backend/enviar_formulario.php" method="post" id="contact-form">
                     <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
 
@@ -46,19 +46,19 @@
 
                     <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
                     <input type="tel" id="telefono" name="telefono" placeholder="Teléfono (Opcional)">
-                    <label for="tipo-proyecto"><i class="fas fa-hammer"></i> Tipo de Proyecto</label>
 
-                    <select id="tipo-proyecto" name="tipo-proyecto" required>
-                        <option value="" disabled selected> Elige una opción </option>
-                        <option value="portones-canceles">Portónes o canceles metalicos</option>
-                        <option value="puertas-ventanas">Puertas y ventanas de herreria</option>
-                        <option value="protecciones">Protección para puertas y ventanas</option>
-                        <option value="barandales">Barandales y Pasamanos</option>
-                        <option value="escaleras">Escaleras metalicas</option>
-                        <option value="estructuras">Estructuras metalicas y techos</option>
-                        <option value="rejas">Rejas y cercas de seguridad</option>
-                        <option value="soldadura">Soldadura y Reparaciones</option>
-                        <option value="Otro">Otro</option>
+                    <label for="tipo-proyecto"><i class="fas fa-hammer"></i> Tipo de Proyecto</label>
+                    <select id="tipo-proyecto" name="tipo_proyecto" required>
+                        <option value="General" disabled selected> Elige una opción </option>
+                        <option value="Portones y Canceles Metálicos">Portones y Canceles Metálicos</option>
+                        <option value="Puertas y Ventanas">Puertas y Ventanas de Herrería</option>
+                        <option value="Protecciones">Protecciones para Ventanas y Locales</option>
+                        <option value="Barandales y Pasamanos">Barandales y Pasamanos</option>
+                        <option value="Escaleras Metálicas">Escaleras Metálicas</option>
+                        <option value="Estructuras y Techos">Estructuras Metálicas y Techos</option>
+                        <option value="Rejas y Cercas">Rejas y Cercas de Seguridad</option>
+                        <option value="Soldadura y Reparaciones">Soldadura y Reparaciones</option>
+                        <option value="Otro">Otro servicio</option>
                     </select>
 
                     <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje</label>
@@ -114,6 +114,41 @@
             document.querySelector('.menu').classList.toggle('active');
         });
     </script>
-    
+    <script>
+    window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const status = params.get('status');
+        const errorMessage = params.get('msg');
+        
+        // --- Manejo de mensajes de éxito/error (ya lo tenías) ---
+        if (status === 'success') {
+            alert('¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.');
+            history.replaceState(null, '', window.location.pathname);
+        } else if (status === 'error_db_connect') {
+            alert('Lo sentimos, no pudimos conectar con la base de datos en este momento. Intenta de nuevo más tarde.');
+            history.replaceState(null, '', window.location.pathname);
+        } else if (status === 'error_query') {
+            alert('Hubo un error al guardar tu mensaje. Por favor, revisa tus datos e inténtalo de nuevo. Error: ' + (errorMessage ? decodeURIComponent(errorMessage) : 'Desconocido'));
+            history.replaceState(null, '', window.location.pathname);
+        }
+
+        // --- NUEVO: Pre-seleccionar el servicio en el <select> ---
+        const servicioFromURL = params.get('servicio');
+        const tipoProyectoSelect = document.getElementById('tipo-proyecto');
+
+        if (servicioFromURL && tipoProyectoSelect) {
+            // Decodificar el nombre del servicio de la URL
+            const decodedServicio = decodeURIComponent(servicioFromURL);
+            
+            // Iterar sobre las opciones para encontrar una coincidencia
+            for (let i = 0; i < tipoProyectoSelect.options.length; i++) {
+                if (tipoProyectoSelect.options[i].value === decodedServicio) {
+                    tipoProyectoSelect.selectedIndex = i; // Seleccionar la opción
+                    break; // Salir del bucle una vez encontrada la opción
+                }
+            }
+        }
+    };
+</script>
 </body>
 </html>
