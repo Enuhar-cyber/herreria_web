@@ -267,7 +267,11 @@ footer {
     padding: 1.5rem;
     margin-top: 2rem;
 }
-.page-nosotros footer{
+.page-nosotros footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
     margin-top: 0px;
 }
 /* Responsive */
