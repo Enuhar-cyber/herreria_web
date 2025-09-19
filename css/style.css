@@ -192,6 +192,9 @@ header {
     justify-content: space-around;
     align-items: center;
 }
+.benefits-container .benefit-item:hover {
+    transform: translateY(-5px);
+}
 .benefit-item {
     display: flex;
     flex-direction: column;
@@ -225,6 +228,7 @@ header {
     width: 100%; /* Full width for consistent text alignment */
     flex-grow: 1; /* Allows content to fill available space */
 }
+
 .company-description{
     padding: 2rem;
     text-align: center;
@@ -236,6 +240,14 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 2rem;
 }
+.company-description {
+    transition: transform 0.3s ease;
+}
+
+.company-description:hover {
+    transform: translateY(-5px);
+}
+
 .company-description i{
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -259,6 +271,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 2rem;
 }
+
 /* Footer */
 footer {
     background-color: #1a1a1a;
@@ -675,6 +688,7 @@ footer {
         margin: 1rem 0;
         min-height: auto;
     }
+    
 
     .company-description,
     .why-choose-us {
