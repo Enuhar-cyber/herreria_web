@@ -94,7 +94,7 @@ header {
 /* Sección Hero */
 .hero {
     height: 80vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/hero.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/hero.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -703,7 +703,7 @@ footer {
     width: 100%;
     margin: 0;
     padding: 4rem 20px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/Fondos.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Fondos.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
