@@ -19,7 +19,6 @@
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
                 <li><a href="servicios.html"><i class="fas fa-hammer"></i> Servicios</a></li>
-                <li><a href="productos.html"><i class="fas fa-images"></i> Productos</a></li>
                 <li><a href="nosotros.html"><i class="fas fa-people-arrows"></i> Nosotros</a></li>
                 <li><a href="contacto.html" class="active"><i class="fas fa-envelope"></i> Contacto</a></li>
             </ul>
@@ -48,13 +47,15 @@
                     <label for="tipo-proyecto"><i class="fas fa-hammer"></i> Tipo de Proyecto</label>
 
                     <select id="tipo-proyecto" name="tipo-proyecto" required>
-                        <option value="" disabled selected>-- Elige una opción --</option>
-                        <option value="Porton">Portón</option>
-                        <option value="Barandal">Barandal</option>
-                        <option value="Proteccion">Protección para Ventana</option>
-                        <option value="Escalera">Escalera</option>
-                        <option value="Estructura">Estructura Metálica</option>
-                        <option value="Mueble">Mueble</option>
+                        <option value="" disabled selected> Elige una opción </option>
+                        <option value="portones-canceles">Portónes o canceles metalicos</option>
+                        <option value="puertas-ventanas">Puertas y ventanas de herreria</option>
+                        <option value="protecciones">Protección para puertas y ventanas</option>
+                        <option value="barandales">Barandales y Pasamanos</option>
+                        <option value="escaleras">Escaleras metalicas</option>
+                        <option value="estructuras">Estructuras metalicas y techos</option>
+                        <option value="rejas">Rejas y cercas de seguridad</option>
+                        <option value="soldadura">Soldadura y Reparaciones</option>
                         <option value="Otro">Otro</option>
                     </select>
 
@@ -63,11 +64,10 @@
 
                     <label for="archivo" class="label-archivo">
                         <i class="fas fa-camera"></i>
-                        <span>Seleccionar Archivo...</span>
-                            </label>
-                            <input type="file" id="archivo" name="archivo" class="input-archivo" accept="image/png, image/jpeg">
-                        <span id="nombre-archivo">Ningún archivo seleccionado</span>
-
+                        <span>Seleccionar Archivo... (Opcional)</span>
+                    </label>
+                    <input type="file" id="archivo" name="archivo" class="input-archivo" accept="image/png, image/jpeg">
+                    <span id="nombre-archivo">Ningún archivo seleccionado</span>
                     <button type="submit" class="btn"><i class="fas fa-paper-plane" id="enviar-btn"></i> Enviar</button>
                 </form>
             </div>
@@ -75,16 +75,17 @@
             <!-- contacto -->
             <div class="info-contacto">
                 <h3><i class="fas fa-map-marker-alt"></i> Nuestra ubicación</h3>
-                <p><strong>Dirección:</strong> Jocotepec centro, JAL</p>
-                <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
-                <p><strong>Email:</strong> contacto@herreríalopez.com</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3742.416872641496!2d-103.430065320866!3d20.283004964486583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDE2JzU4LjgiTiAxMDPCsDI1JzMwLjciVw!5e0!3m2!1ses!2smx!4v1757700842233!5m2!1ses!2smx" 
-                width="600" 
+                <p><strong>Dirección:</strong> Calle González Ortega #22C, Jocotepec, Jalisco, México</p>
+                <p><strong>Teléfono:</strong> +52 33 1116 6039</p>
+                <p><strong>Email:</strong> lopezherreria8@gmail.com</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3742.3564708053955!2d-103.42407299999999!3d20.285507000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDE3JzA3LjgiTiAxMDPCsDI1JzI2LjciVw!5e0!3m2!1ses!2smx!4v1758254488295!5m2!1ses!2smx" 
+                width="90%" 
                 height="450" 
-                style="border:0;" 
+                style="border:0; border-radius: 20px;" 
                 allowfullscreen="" 
                 loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
             </div>
         </div>
     </section>
@@ -106,18 +107,11 @@
             </div>
         </div>
     </footer>
-    
     <script>
-    // Script para el menú responsive
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('.menu').classList.toggle('active');
-    });
-
-    // NUEVO SCRIPT para el nombre del archivo
-    document.getElementById('archivo').addEventListener('change', function() {
-        var nombreArchivo = this.files[0] ? this.files[0].name : "Ningún archivo seleccionado";
-        document.getElementById('nombre-archivo').textContent = nombreArchivo;
-    });
-</script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+    
 </body>
 </html>
