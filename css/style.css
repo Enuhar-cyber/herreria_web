@@ -815,21 +815,41 @@ footer a:hover{
                 }
             }
 /* --- Estilos para las Tarjetas de Servicio --- */
-.services-container{
+.services-section {
+    background-color: #1a1a1a;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Fondos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 4rem 0;
+    min-height: 100vh;
+}
+
+.services-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
+}
+.services-container h2 {
+    color: #f4f4f4;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
+    padding: 2rem 0;
 }
 
 .service-card {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95);
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
@@ -839,6 +859,7 @@ footer a:hover{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    backdrop-filter: blur(5px);
 }
 
 .service-card:hover {
@@ -849,16 +870,19 @@ footer a:hover{
 .service-card h3 {
     margin-top: 0;
     color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.card-image{
+.card-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.card-content{
+.card-content {
     flex-grow: 1;
     padding: 20px;
     text-align: center;
@@ -867,6 +891,7 @@ footer a:hover{
 .service-card p {
     flex-grow: 1;
     color: #666;
+    line-height: 1.6;
 }
 
 .service-card i {
@@ -883,12 +908,22 @@ footer a:hover{
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     margin-top: 15px;
 }
 
 .btn-cotizar:hover {
     background-color: #e0a500;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.page-servicios footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 0;
 }
 
 /* Responsive Design */
